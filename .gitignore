@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+configs/ibm_credentials.yaml
+results/
+*.egg-info/
+dist/
+.pytest_cache/
+.DS_Store
+*.ipynb_checkpoints

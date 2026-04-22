@@ -1,0 +1,56 @@
+# =============================================================================
+# Hybrid QFT Gradient Descent — Global Configuration
+# =============================================================================
+
+# ── Optimization ──────────────────────────────────────────────────────────────
+optimizer:
+  learning_rate: 0.01
+  max_iterations: 100
+  n_trials: 20                   # Independent runs for statistical validity
+  convergence_threshold: 1e-6
+  random_seed: 42
+
+# ── QFT Arithmetic ────────────────────────────────────────────────────────────
+qft_arithmetic:
+  n_qubits: 6                  # Qubits per register (controls numeric range)
+  precision_bits: 5              # Fixed-point fractional bits
+  value_range: [-1.0, 1.0]       # Encoded value range
+  shots: 8192                # Measurement shots per circuit
+
+# ── Objective Function ────────────────────────────────────────────────────────
+objective:
+  function: "quadratic"          # Options: quadratic, rosenbrock, himmelblau, sin_cos
+  n_params: 2
+
+# ── Backends ──────────────────────────────────────────────────────────────────
+backends:
+  simulation:
+    name: "aer_simulator"
+    method: "statevector"        # statevector | density_matrix | automatic
+    gpu: false                   # Set true if GPU available
+
+  hardware:
+    preferred:
+      - "ibm_torino"
+      - "ibm_brisbane"
+    fallback_to_sim: true        # Fall back to simulator if hardware unavailable
+    max_queue_wait_minutes: 30
+    optimization_level:  3        # Qiskit transpiler optimization level (0-3)
+
+# ── Noise Sensitivity Experiment ──────────────────────────────────────────────
+noise_experiment:
+  error_rates: [0.0, 0.001, 0.005, 0.01, 0.02, 0.05, 0.1]
+  n_samples_per_rate: 200
+
+# ── Arithmetic Accuracy Experiment ────────────────────────────────────────────
+arithmetic_experiment:
+  n_random_samples: 500
+  value_range: [-0.9, 0.9]
+
+# ── Results ───────────────────────────────────────────────────────────────────
+results:
+  output_dir: "results"
+  save_plots: true
+  save_csv: true
+  plot_format: "png"             # png | pdf | svg
+  dpi: 150
