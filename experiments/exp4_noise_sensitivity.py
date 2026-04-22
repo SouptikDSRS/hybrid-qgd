@@ -33,9 +33,9 @@ from tqdm import tqdm
 
 from qiskit_aer import AerSimulator
 
-from src.quantum_backend import BackendManager
-from src.qft_arithmetic import QFTArithmetic
-from src.noise_model import build_combined_noise_model
+from hybrid_qgd.quantum_backend import BackendManager
+from hybrid_qgd.qft_arithmetic import QFTArithmetic
+from hybrid_qgd.noise_model import build_combined_noise_model
 
 
 RESULTS_DIR = Path("results")

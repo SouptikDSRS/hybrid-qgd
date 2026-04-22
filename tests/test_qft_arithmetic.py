@@ -12,8 +12,8 @@ import pytest
 import numpy as np
 from qiskit_aer import AerSimulator
 
-from src.qft_arithmetic import QFTArithmetic
-from src.utils import float_to_fixed, fixed_to_float, precision_of_register
+from hybrid_qgd.qft_arithmetic import QFTArithmetic
+from hybrid_qgd.utils import float_to_fixed, fixed_to_float, precision_of_register
 
 
 # ─────────────────────────────────────────────────────────────────────────────

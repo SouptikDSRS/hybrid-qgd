@@ -21,13 +21,13 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pytest
 import numpy as np
 
-from src.parameter_shift import (
+from hybrid_qgd.parameter_shift import (
     parameter_shift_gradient,
     parameter_shift_gradient_parallel,
     finite_difference_gradient,
     ParameterShiftEstimator,
 )
-from src.objective_functions import (
+from hybrid_qgd.objective_functions import (
     quadratic, quadratic_gradient,
     rosenbrock,
     sphere,

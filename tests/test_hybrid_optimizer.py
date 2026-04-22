@@ -11,8 +11,8 @@ import pytest
 import numpy as np
 from qiskit_aer import AerSimulator
 
-from src.hybrid_optimizer import HybridQFTOptimizer, ClassicalGradientDescent, OptimizationResult
-from src.objective_functions import quadratic, quadratic_gradient
+from hybrid_qgd.hybrid_optimizer import HybridQFTOptimizer, ClassicalGradientDescent, OptimizationResult
+from hybrid_qgd.objective_functions import quadratic, quadratic_gradient
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -34,9 +34,9 @@ import matplotlib.gridspec as gridspec
 from pathlib import Path
 from tqdm import tqdm
 
-from src.quantum_backend import BackendManager
-from src.hybrid_optimizer import HybridQFTOptimizer, ClassicalGradientDescent, OptimizationResult
-from src.objective_functions import get_function, get_gradient
+from hybrid_qgd.quantum_backend import BackendManager
+from hybrid_qgd.hybrid_optimizer import HybridQFTOptimizer, ClassicalGradientDescent, OptimizationResult
+from hybrid_qgd.objective_functions import get_function, get_gradient
 
 
 # ─────────────────────────────────────────────────────────────────────────────
