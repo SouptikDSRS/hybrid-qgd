@@ -10,3 +10,16 @@ dist/
 .pytest_cache/
 .DS_Store
 *.ipynb_checkpoints
+
+# Experiment results and plots
+*_res/
+results/
+final_plots/
+*.png
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+.eggs/
+*.egg-info/
