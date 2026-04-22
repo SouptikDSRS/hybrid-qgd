@@ -31,9 +31,9 @@ import numpy as np
 from dataclasses import dataclass, field
 from typing import Callable, Literal
 
-from src.parameter_shift import ParameterShiftEstimator
-from src.qft_arithmetic import QFTArithmetic
-from src.utils import clip_to_range
+from hybrid_qgd.parameter_shift import ParameterShiftEstimator
+from hybrid_qgd.qft_arithmetic import QFTArithmetic
+from hybrid_qgd.utils import clip_to_range
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -313,7 +313,7 @@ class ClassicalGradientDescent:
             if self.grad_fn is not None:
                 grads = self.grad_fn(params)
             else:
-                from src.parameter_shift import finite_difference_gradient
+                from hybrid_qgd.parameter_shift import finite_difference_gradient
                 grads = finite_difference_gradient(self.loss_fn, params)
 
             gnorm = float(np.linalg.norm(grads))

@@ -33,7 +33,7 @@ import numpy as np
 
 from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister
 
-from src.utils import float_to_fixed, fixed_to_float
+from hybrid_qgd.utils import float_to_fixed, fixed_to_float
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -194,7 +194,7 @@ class QFTArithmetic:
     @property
     def precision(self):
         """LSB size: smallest representable difference."""
-        from src.utils import precision_of_register
+        from hybrid_qgd.utils import precision_of_register
         return precision_of_register(self.n, self.v_min, self.v_max)
 
     def circuit_info(self):

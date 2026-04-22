@@ -12,7 +12,7 @@ Handles
 
 Usage
 -----
-    from src.quantum_backend import BackendManager
+    from hybrid_qgd.quantum_backend import BackendManager
 
     mgr = BackendManager("configs/config.yaml", "configs/ibm_credentials.yaml")
     backend = mgr.get_backend("simulation")   # Aer simulator
